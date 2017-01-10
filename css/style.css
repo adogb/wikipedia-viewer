@@ -21,16 +21,16 @@ main {
 main > h1{
    	margin: 0;
     padding-top: 0.5em;
-    margin-bottom: 0.3em;
-    font-size: 4.5rem;
-    /*font-family: 'Amatic SC', cursive;*/
+    margin-bottom: 0.8em;
+	font-size: 4.5rem;
+    font-family: 'Lilita One', cursive;
 }
 
 .mainContainer {
     max-width: 63rem;
     padding: 0 2.5rem 0;
     border-radius: 15px;
-	margin: 0 auto 2rem;
+	margin: 0 auto 4rem;
 }
 .clearfix:after { /*used to avoid div with floated elements in it to collapse to 0 px height */
    content: " ";
@@ -39,20 +39,44 @@ main > h1{
    clear: both;
 }
 
-#searchBar {
-	max-width:30rem;
-	margin:0 auto 1rem;
+#buttonBar {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+	flex-wrap: wrap;
 }
 
-#resultsList h1{
+#searchBar {
+	max-width:30rem;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}
+
+#resultsList a {
+	color: inherit;
+	display: inline-block;
+	padding: 0 2rem;
+	border-left: 4px solid white; /* "invisible" border to avoid text shifting to the right when hovering */
+}
+
+#resultsList a:hover {
+	text-decoration: none;
+	background-color: #f5f5f5;
+    border-left: 4px solid #31b0d5;
+}
+
+#resultsList h1, #error h1{
     margin-bottom: 0.3em;
+	margin-top: 0.75em;
     font-size: 2rem;
+	color: #31b0d5;
     /*font-family: 'Amatic SC', cursive;*/
 }
 
-#resultsList ul {
-	list-style: none;
+#resultsList p{
+    margin-bottom: 0.75em;
 }
+
 #resultsList li {
 	list-style: none;
 }
