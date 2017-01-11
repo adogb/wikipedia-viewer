@@ -52,6 +52,9 @@ main > h1{
 	margin-bottom: 1rem;
 }
 
+#resultsList {
+	display: none;
+}
 #resultsList a {
 	color: inherit;
 	display: inline-block;
