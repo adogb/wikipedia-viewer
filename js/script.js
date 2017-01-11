@@ -21,17 +21,14 @@ $(document).ready(function(){
         userUrl = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch="+topic+"&srlimit=10&srprop=snippet&callback=?";
         $.getJSON(userUrl, function(data) {
             if (data.query.searchinfo.totalhits==0){
-                $resultsListItems.each(function(index){
-                    $(this).find("a").attr("href","");
-                    $(this).find("h1").text("");
-                    $(this).find("p").html("");
-                });
+                $("#resultsList").hide();
                 $("#error").show();
                 $("#error").find("h1").text("Hmm...");
                 $("#error").find("p").text("Sorry, no search results were found. Wikipedia knows a lot but not "+topic+"... Did you make a typo?");
                 
             } else {
                  $("#error").hide();
+                 $("#resultsList").show();
                  $resultsListItems.each(function(index){                    
                     title = data.query.search[index].title;
                     $(this).find("a").attr("href","https://en.wikipedia.org/wiki/"+encodeURIComponent(title));
