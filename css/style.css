@@ -81,6 +81,10 @@ main > h1{
 	list-style: none;
 }
 
+#error {
+	display: none;
+}
+
 footer {
 	position: absolute;
 	width:100%;
